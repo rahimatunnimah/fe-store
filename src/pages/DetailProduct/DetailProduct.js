@@ -9,6 +9,8 @@ import ModalEditImage from "../../components/Modal/ModalEditImage";
 
 const DetailProduct = () => {
   const [detailProduct, setDetailProduct] = useState({});
+  const idProduct = useParams();
+  const { id } = idProduct;
 
   useEffect(() => {
     axios
@@ -20,9 +22,6 @@ const DetailProduct = () => {
         console.log(err);
       });
   }, [id]);
-
-  const idProduct = useParams();
-  const { id } = idProduct;
 
   return (
     <>
