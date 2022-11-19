@@ -20,10 +20,6 @@ function ModalEdit() {
   const { id } = idProduct;
 
   useEffect(() => {
-    getProduct();
-  }, [product]);
-
-  const getProduct = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/api/products/detail/${id}`)
       .then((res) => {
@@ -32,7 +28,7 @@ function ModalEdit() {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }, []);
 
   const config = {
     headers: {

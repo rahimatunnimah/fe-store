@@ -11,13 +11,6 @@ const DetailProduct = () => {
   const [detailProduct, setDetailProduct] = useState({});
 
   useEffect(() => {
-    getDetailProduct();
-  }, [detailProduct]);
-
-  const idProduct = useParams();
-  const { id } = idProduct;
-
-  const getDetailProduct = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/api/products/detail/${id}`)
       .then((res) => {
@@ -26,7 +19,10 @@ const DetailProduct = () => {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }, []);
+
+  const idProduct = useParams();
+  const { id } = idProduct;
 
   return (
     <>
