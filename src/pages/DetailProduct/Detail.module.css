@@ -1,0 +1,10 @@
+.body {
+  margin-top: 100px;
+}
+
+.img img{
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}

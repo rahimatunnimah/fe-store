@@ -1,0 +1,14 @@
+
+.navMenu {
+  text-decoration: none;
+  color: black;
+}
+
+.navMenu:hover {
+  color:  white;
+}
+
+.navContainer {
+  background-color: #F15412;
+}
+
