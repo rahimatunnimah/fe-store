@@ -1,15 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import loginStyle from "./Login.module.css";
 import FormLogin from "../../components/Auth/FormLogin";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (localStorage.getItem("token")) navigate("/");
-  });
-
   return (
     <div className={`${loginStyle.container}`}>
       <h1>Welcome</h1>
