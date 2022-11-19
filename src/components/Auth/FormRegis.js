@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import registerStyle from "../../pages/Register/Register.module.css";
 
 function FormRegis() {
   const [username, setUsername] = useState("");
@@ -46,6 +47,7 @@ function FormRegis() {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Username</Form.Label>
         <Form.Control
+          className={`${registerStyle.formRegis}`}
           type="text"
           placeholder="Your username"
           onChange={(e) => setUsername(e.target.value)}
@@ -54,6 +56,7 @@ function FormRegis() {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
+          className={`${registerStyle.formRegis}`}
           type="email"
           placeholder="example@gmail.com"
           onChange={(e) => setEmail(e.target.value)}
@@ -62,14 +65,22 @@ function FormRegis() {
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control
+          className={`${registerStyle.formRegis}`}
           type="password"
           placeholder="Your password"
           onChange={(e) => setPassword(e.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" disabled={isLoading}>
-        {isLoading ? "Loading..." : "Register Account"}
-      </Button>
+      <div className="d-grid gap-2">
+        <Button
+          className={`${registerStyle.btnRegis}`}
+          variant="outline-dark"
+          type="submit"
+          disabled={isLoading}
+        >
+          {isLoading ? "Loading..." : "Register Account"}
+        </Button>
+      </div>
     </Form>
   );
 }

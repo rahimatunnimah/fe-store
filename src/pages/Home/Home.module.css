@@ -9,3 +9,11 @@
   object-position: center;
   border-radius: 0 !important;
 }
+
+.mdlAddTitle {
+  color: white !important;
+}
+
+.mdlAddTitle:hover {
+  color: black !important;
+}

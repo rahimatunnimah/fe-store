@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import loginStyle from "../../pages/Login/Login.module.css";
 
 function FormLogin() {
   const [email, setEmail] = useState("");
@@ -42,6 +43,7 @@ function FormLogin() {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
+          className={`${loginStyle.formLogin}`}
           type="email"
           placeholder="example@gmail.com"
           onChange={(e) => setEmail(e.target.value)}
@@ -51,14 +53,22 @@ function FormLogin() {
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control
+          className={`${loginStyle.formLogin}`}
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" disabled={isLoading}>
-        {isLoading ? "Loading..." : "Login"}
-      </Button>
+      <div className="d-grid gap-2">
+        <Button
+          className={`${loginStyle.btnLogin}`}
+          type="submit"
+          variant="outline-dark"
+          disabled={isLoading}
+        >
+          {isLoading ? "Loading..." : "Login"}
+        </Button>
+      </div>
     </Form>
   );
 }

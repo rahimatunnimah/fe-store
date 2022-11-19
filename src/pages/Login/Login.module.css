@@ -9,5 +9,26 @@
 
 .linkRegis {
   text-decoration: none;
-  color: #DB3022;
+  color: #F15412;
+}
+
+.title {
+  color: #F15412;
+}
+
+.btnLogin {
+  background-color: #F15412;
+  border-color: #F15412;
+  color: white;
+}
+
+.btnLogin:hover {
+  background-color: white ;
+  color: #F15412;
+  border-color: #F15412;
+}
+
+.formLogin:focus {
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11) !important;
+  border-color: #F15412 !important;
 }

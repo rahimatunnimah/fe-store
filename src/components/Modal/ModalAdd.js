@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Modal, Nav, Form, Button } from "react-bootstrap";
 import axios from "axios";
 import Swal from "sweetalert2";
+import homeStyle from "../../pages/Home/Home.module.css";
 
 function ModalAdd() {
   const [show, setShow] = useState(false);
@@ -49,10 +50,10 @@ function ModalAdd() {
       })
       .catch((err) => {
         console.log(err);
-        Swal.fire({
-          icon: "error",
-          text: err?.response?.data,
-        });
+        // Swal.fire({
+        //   icon: "error",
+        //   text: err?.response?.data,
+        // });
       })
       .finally(() => {
         setIsLoading(false);
@@ -61,7 +62,9 @@ function ModalAdd() {
 
   return (
     <>
-      <Nav.Link onClick={handleShow}>Add Product</Nav.Link>
+      <Nav.Link onClick={handleShow} className={homeStyle.mdlAddTitle}>
+        Add Product
+      </Nav.Link>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add Product</Modal.Title>
@@ -84,7 +87,7 @@ function ModalAdd() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Purchase Price</Form.Label>
               <Form.Control
-                type="number"
+                type="text"
                 placeholder="0"
                 autoFocus
                 onChange={(e) => setBuyPrice(e.target.value)}
@@ -93,7 +96,7 @@ function ModalAdd() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Selling Price</Form.Label>
               <Form.Control
-                type="number"
+                type="text"
                 placeholder="0"
                 autoFocus
                 onChange={(e) => setSellPrice(e.target.value)}
@@ -102,7 +105,7 @@ function ModalAdd() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Stock</Form.Label>
               <Form.Control
-                type="number"
+                type="text"
                 placeholder="0"
                 autoFocus
                 onChange={(e) => setStock(e.target.value)}

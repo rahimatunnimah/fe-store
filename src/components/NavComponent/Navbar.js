@@ -15,7 +15,7 @@ const NavHome = () => {
     localStorage.clear();
     navigate("/");
   };
-  console.log(user);
+
   return (
     <>
       <Navbar fixed="top" expand="lg" className={navStyle.navContainer}>

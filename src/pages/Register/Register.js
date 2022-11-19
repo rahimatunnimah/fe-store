@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 const Register = () => {
   return (
     <div className={`${registerStyle.container}`}>
-      <h5 className="mt-3">Please signup with your account</h5>
+      <h1 className={`${registerStyle.title}`}>Welcome</h1>
+      <h5 className={`${registerStyle.title}`}>
+        Please signup with your account
+      </h5>
       <FormRegis />
       <p className="mt-3">
-        Already have a Tokopedia account?{" "}
+        Already have an account?{" "}
         <Link to={"/login"} className={`${registerStyle.linkLogin}`}>
           Login
         </Link>
