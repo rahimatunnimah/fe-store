@@ -19,7 +19,7 @@ const DetailProduct = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [id]);
 
   const idProduct = useParams();
   const { id } = idProduct;

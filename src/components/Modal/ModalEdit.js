@@ -28,7 +28,7 @@ function ModalEdit() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [id]);
 
   const config = {
     headers: {
