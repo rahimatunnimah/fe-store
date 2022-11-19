@@ -50,10 +50,10 @@ function ModalAdd() {
       })
       .catch((err) => {
         console.log(err);
-        // Swal.fire({
-        //   icon: "error",
-        //   text: err?.response?.data,
-        // });
+        Swal.fire({
+          icon: "error",
+          text: err?.response?.data,
+        });
       })
       .finally(() => {
         setIsLoading(false);
@@ -67,13 +67,14 @@ function ModalAdd() {
       </Nav.Link>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Product</Modal.Title>
+          <Modal.Title className={homeStyle.addTitle}>Add Product</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleAddProduct}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Product Name</Form.Label>
               <Form.Control
+                className={homeStyle.formAdd}
                 type="text"
                 placeholder="Product Name"
                 autoFocus
@@ -82,11 +83,16 @@ function ModalAdd() {
             </Form.Group>
             <Form.Group controlId="formFile" className="mb-3">
               <Form.Label>Product Image</Form.Label>
-              <Form.Control type="file" onChange={handleUploadImage} />
+              <Form.Control
+                className={homeStyle.formAdd}
+                type="file"
+                onChange={handleUploadImage}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Purchase Price</Form.Label>
               <Form.Control
+                className={homeStyle.formAdd}
                 type="text"
                 placeholder="0"
                 autoFocus
@@ -96,6 +102,7 @@ function ModalAdd() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Selling Price</Form.Label>
               <Form.Control
+                className={homeStyle.formAdd}
                 type="text"
                 placeholder="0"
                 autoFocus
@@ -105,16 +112,26 @@ function ModalAdd() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Stock</Form.Label>
               <Form.Control
+                className={homeStyle.formAdd}
                 type="text"
                 placeholder="0"
                 autoFocus
                 onChange={(e) => setStock(e.target.value)}
               />
             </Form.Group>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button
+              className={homeStyle.btnClose}
+              variant="secondary"
+              onClick={handleClose}
+            >
               Close
             </Button>
-            <Button variant="primary" type="submit" disabled={isLoading}>
+            <Button
+              className={homeStyle.btnAddData}
+              variant="primary"
+              type="submit"
+              disabled={isLoading}
+            >
               {isLoading ? "Loading..." : "Add Product"}
             </Button>
           </Form>

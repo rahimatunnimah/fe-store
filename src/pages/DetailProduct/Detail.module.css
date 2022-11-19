@@ -1,10 +1,56 @@
 .body {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .img img{
   width: 100%;
-  height: auto;
+  height: 50vh;
   border-radius: 15px;
   object-fit: cover;
 }
+
+.btnEditImg {
+  background-color: #F15412 !important;
+  border-color: #F15412 !important;
+}
+
+
+.btnEditImg:hover {
+  background-color: white ;
+  color: #F15412;
+  border-color: #F15412;
+}
+
+.btnEditPrdct {
+  margin-right: 5px;
+}
+
+.btnClose {
+  width: 100px;
+}
+
+.btnEditData {
+  margin-left: 5px;
+  background-color: #F15412 !important;
+  border-color: #F15412 !important;
+  color: white !important;
+}
+
+.btnEditData:hover {
+  background-color: white ;
+  color: #F15412;
+  border-color: #F15412;
+}
+
+.formEdit:focus {
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11) !important;
+  border-color: #F15412 !important;
+}
+
+.titleEdit{
+  color: #F15412 !important;
+}
+
+.titleDelete{
+  color: red;
+} 

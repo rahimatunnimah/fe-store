@@ -1,11 +1,11 @@
 
 .navMenu {
   text-decoration: none;
-  color: white;
+  color: black 
 }
 
 .navMenu:hover {
-  color:  black;
+  color:  white;
 }
 
 .navContainer {

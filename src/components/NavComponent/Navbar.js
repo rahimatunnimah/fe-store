@@ -40,7 +40,7 @@ const NavHome = () => {
             </Nav>
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>
+            <Navbar.Text className={navStyle.navMenu}>
               {token ? (
                 <NavDropdown title={user?.username} id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1" onClick={handleLogout}>

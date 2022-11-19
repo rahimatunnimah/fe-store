@@ -3,6 +3,7 @@ import { Modal, Form, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import detailStyle from "../../pages/DetailProduct/Detail.module.css";
 
 function ModalEdit() {
   const [show, setShow] = useState(false);
@@ -69,18 +70,25 @@ function ModalEdit() {
   };
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button
+        className={`mt-2 ${detailStyle.btnEditPrdct}`}
+        variant="primary"
+        onClick={handleShow}
+      >
         Edit
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Edit Product</Modal.Title>
+          <Modal.Title className={detailStyle.titleEdit}>
+            Edit Product
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleUpdateProduct}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Product Name</Form.Label>
               <Form.Control
+                className={detailStyle.formEdit}
                 type="text"
                 placeholder={product?.name}
                 autoFocus
@@ -90,7 +98,8 @@ function ModalEdit() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Purchase Price</Form.Label>
               <Form.Control
-                type="number"
+                className={detailStyle.formEdit}
+                type="text"
                 placeholder={product?.buy_price}
                 autoFocus
                 onChange={(e) => setBuyPrice(e.target.value)}
@@ -99,7 +108,8 @@ function ModalEdit() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Selling Price</Form.Label>
               <Form.Control
-                type="number"
+                className={detailStyle.formEdit}
+                type="text"
                 placeholder={product?.sell_price}
                 autoFocus
                 onChange={(e) => setSellPrice(e.target.value)}
@@ -108,16 +118,25 @@ function ModalEdit() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Stock</Form.Label>
               <Form.Control
-                type="number"
+                className={detailStyle.formEdit}
+                type="text"
                 placeholder={product?.stock}
                 autoFocus
                 onChange={(e) => setStock(e.target.value)}
               />
             </Form.Group>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button
+              className={detailStyle.btnClose}
+              variant="secondary"
+              onClick={handleClose}
+            >
               Close
             </Button>
-            <Button variant="primary" type="submit" disabled={isLoading}>
+            <Button
+              className={detailStyle.btnEditData}
+              type="submit"
+              disabled={isLoading}
+            >
               {isLoading ? "Loading..." : "Edit Product"}
             </Button>
           </Form>

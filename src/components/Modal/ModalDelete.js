@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import detailStyle from "../../pages/DetailProduct/Detail.module.css";
 
 function ModalDelete() {
   const [show, setShow] = useState(false);
@@ -43,17 +44,22 @@ function ModalDelete() {
   };
   return (
     <>
-      <Button variant="danger" onClick={handleShow}>
+      <Button className="mt-2" variant="danger" onClick={handleShow}>
         Delete
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Delete Product</Modal.Title>
+          <Modal.Title className={detailStyle.titleDelete}>
+            Delete Product
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>Are you sure delete this product?</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button
+            className={detailStyle.btnClose}
+            variant="secondary"
+            onClick={handleClose}
+          >
             Close
           </Button>
           <Button
