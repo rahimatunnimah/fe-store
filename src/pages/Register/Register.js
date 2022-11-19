@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import registerStyle from "./Register.module.css";
 import FormRegis from "../../components/Auth/FormRegis";
 import { Link } from "react-router-dom";
