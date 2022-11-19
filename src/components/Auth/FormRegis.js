@@ -74,7 +74,6 @@ function FormRegis() {
       <div className="d-grid gap-2">
         <Button
           className={`${registerStyle.btnRegis}`}
-          variant="outline-dark"
           type="submit"
           disabled={isLoading}
         >

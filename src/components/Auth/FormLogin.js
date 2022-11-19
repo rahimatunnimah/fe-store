@@ -63,7 +63,6 @@ function FormLogin() {
         <Button
           className={`${loginStyle.btnLogin}`}
           type="submit"
-          variant="outline-dark"
           disabled={isLoading}
         >
           {isLoading ? "Loading..." : "Login"}

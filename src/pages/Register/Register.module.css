@@ -17,15 +17,15 @@
 }
 
 .btnRegis {
-  background-color: #F15412;
-  border-color: #F15412;
-  color: white;
+  background-color: #F15412 !important;
+  border-color: #F15412 !important;
+  color: white !important;
 }
 
 .btnRegis:hover {
-  background-color: white;
-  color: #F15412;
-  border-color: #F15412;
+  background-color: white !important;
+  color: #F15412 !important;
+  border-color: #F15412 !important;
 }
 
 .formRegis:focus {
