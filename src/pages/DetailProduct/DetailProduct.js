@@ -12,7 +12,7 @@ const DetailProduct = () => {
 
   useEffect(() => {
     getDetailProduct();
-  }, []);
+  }, [detailProduct]);
 
   const idProduct = useParams();
   const { id } = idProduct;

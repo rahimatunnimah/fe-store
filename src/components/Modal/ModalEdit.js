@@ -21,7 +21,7 @@ function ModalEdit() {
 
   useEffect(() => {
     getProduct();
-  }, []);
+  }, [product]);
 
   const getProduct = () => {
     axios
